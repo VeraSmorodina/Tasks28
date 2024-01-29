@@ -1,5 +1,4 @@
-
-public class Main1 {
+public class Level1 {
     public static int squirrel(int number){
         int factorial = 1;
         if (number <= 0)
