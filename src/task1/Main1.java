@@ -1,4 +1,3 @@
-package task1;
 
 public class Main1 {
     public static int squirrel(int number){
