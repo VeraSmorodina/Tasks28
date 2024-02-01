@@ -1,3 +1,5 @@
+package task1;
+
 public class Level1 {
     public static int squirrel(int number){
         int factorial = 1;
