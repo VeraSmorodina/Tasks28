@@ -1,5 +1,5 @@
 public class Level1 {
-    int ConquestCampaign(int N, int M, int L, int[] battalion) {
+    public static int ConquestCampaign(int N, int M, int L, int[] battalion) {
         int[][] array1 = new int[N][M];
         int[][] array2 = new int[N][M];
         int result = 1;
