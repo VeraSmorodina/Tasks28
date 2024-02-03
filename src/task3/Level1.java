@@ -4,7 +4,6 @@ public class Level1 {
         int[][] array2 = new int[N][M];
         int result = 1;
 
-        // этот цикл равен 1 дню
         for (int i = 0; i < battalion.length; i += 2) {
             int x = battalion[i] - 1;
             int y = battalion[i + 1] - 1;
@@ -16,29 +15,24 @@ public class Level1 {
             result++;
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < M; j++) {
-                    //вверху
-                    if (array1[i][j] == 1 && i - 1 >= 0 && array2[i - 1][j] != 1) {
+                   if (array1[i][j] == 1 && i - 1 >= 0 && array2[i - 1][j] != 1) {
                         array2[i - 1][j] = 1;
                         L++;
                     }
-                    //снизу
                     if (array1[i][j] == 1 && i + 1 < N && array2[i + 1][j] != 1) {
                         array2[i + 1][j] = 1;
                         L++;
                     }
-                    //слева
                     if (array1[i][j] == 1 && j - 1 >= 0 && array2[i][j - 1] != 1) {
                         array2[i][j - 1] = 1;
                         L++;
                     }
-                    //справа
                     if (array1[i][j] == 1 && j + 1 < M && array2[i][j + 1] != 1) {
                         array2[i][j + 1] = 1;
                         L++;
                     }
                 }
             }
-            //копируем элементы из array2 в array1
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < M; j++) {
                     array1[i][j] = array2[i][j];
