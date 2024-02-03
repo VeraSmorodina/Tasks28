@@ -1,13 +1,6 @@
-package task3;
-
 import java.util.ArrayList;
 
 public class Level1 {
-    public static void main(String[] args) {
-        int[] array = {2, 2, 1, 1, 2, 2};
-        System.out.println(ConquestCampaign(2, 2, 3, array));
-    }
-
     public static int ConquestCampaign(int N, int M, int L, int[] battalion) {
         int[][] array1 = new int[N][M];
         int[][] array2 = new int[N][M];

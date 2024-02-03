@@ -22,6 +22,27 @@ public class Level1Test {
         int result = Level1.ConquestCampaign(2, 2, 2, array);
         assertEquals(3, result);
     }
+    @Test
+    public void test1() {
+        int result = Level1.ConquestCampaign(1, 1, 1, new int[]{1, 1});
+        assertEquals(1, result);
+    }
 
+    @Test
+    public void test2() {
+        int result = Level1.ConquestCampaign(1, 1, 2, new int[]{1, 1, 1, 1});
+        assertEquals(1, result);
+    }
 
+    @Test
+    public void test3() {
+        int result = Level1.ConquestCampaign(1, 2, 2, new int[]{1, 1, 1, 1});
+        assertEquals(2, result);
+    }
+
+    @Test
+    public void test4() {
+        int result = Level1.ConquestCampaign(2, 2, 2, new int[]{2, 2, 1, 1});
+        assertEquals(2, result);
+    }
 }
