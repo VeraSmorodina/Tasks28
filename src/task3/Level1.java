@@ -52,7 +52,7 @@ public class Level1 {
                 continue;
             int x = array[i];
             int y = array[i +1];
-            for (int j = 0; j < array.length; j++) {
+            for (int j = 0; j < array.length; j+=2) {
                 if (x == array[j] && y == array[j + 1]){
                     array[j] = 0;
                     array[j+1] = 0;

@@ -45,4 +45,11 @@ public class Level1Test {
         int result = Level1.ConquestCampaign(2, 2, 2, new int[]{2, 2, 1, 1});
         assertEquals(2, result);
     }
+    @Test
+    public void test5() {
+        int result = Level1.ConquestCampaign(2, 3, 6, new int[]{1,1,1,2,1,3,2,1,2,2,2,3});
+        assertEquals(1, result);
+    }
+
+
 }
