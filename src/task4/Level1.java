@@ -1,3 +1,5 @@
+package task4;
+
 import java.util.Arrays;
 
 public class Level1 {
