@@ -1,5 +1,5 @@
 public class Level1 {
-   public static String PatternUnlock(int N, int[] hits) {
+    public static String PatternUnlock(int N, int[] hits) {
         int[][] hits1 = {
                 {6, 1, 9},
                 {5, 2, 8},
@@ -24,10 +24,10 @@ public class Level1 {
                 s1 += currentChar;
             }
         }
-        String shortenedString ="";
+        String shortenedString = "";
         int number = s1.length();
         if (number > 6) {
-           shortenedString = s1.substring(0, 6);
+            shortenedString = s1.substring(0, 6);
         } else {
             shortenedString = s1.substring(0, number);
         }
