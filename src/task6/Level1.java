@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Level1 {
     public static String PatternUnlock(int N, int[] hits) {
         int[][] hits1 = {
@@ -16,22 +18,17 @@ public class Level1 {
             double length = calculateLength(currentPos[0], currentPos[1], nextPos[0], nextPos[1]);
             totalLength += length;
         }
-        String s = "" + totalLength;
+        System.out.println(totalLength);
+        DecimalFormat df = new DecimalFormat("#.#####");
+        String formattedNumber = df.format(totalLength);
         String s1 = "";
-        for (int i = 0; i < s.length(); i++) {
-            char currentChar = s.charAt(i);
-            if (currentChar != '.' && currentChar != '0') {
+        for (int i = 0; i < formattedNumber.length(); i++) {
+            char currentChar = formattedNumber.charAt(i);
+            if (currentChar != '0' && currentChar != ',') {
                 s1 += currentChar;
             }
         }
-        String shortenedString = "";
-        int number = s1.length();
-        if (number > 6) {
-            shortenedString = s1.substring(0, 6);
-        } else {
-            shortenedString = s1.substring(0, number);
-        }
-        return shortenedString;
+        return s1;
     }
 
     private static int[] findPosition(int[][] hits1, int value) {
