@@ -18,7 +18,6 @@ public class Level1 {
             double length = calculateLength(currentPos[0], currentPos[1], nextPos[0], nextPos[1]);
             totalLength += length;
         }
-        System.out.println(totalLength);
         DecimalFormat df = new DecimalFormat("#.#####");
         String formattedNumber = df.format(totalLength);
         String s1 = "";
