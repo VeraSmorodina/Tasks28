@@ -1,3 +1,5 @@
+package task6;
+
 import java.text.DecimalFormat;
 
 public class Level1 {
