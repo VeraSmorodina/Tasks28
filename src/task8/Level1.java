@@ -1,3 +1,5 @@
+package task8;
+
 public class Level1 {
     public static int SumOfThe(int N, int[] data) {
         int result = 0;
