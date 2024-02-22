@@ -87,6 +87,10 @@ public class Level1Test {
         String result = Level1.BigMinus("0", "1");
         assert expectedResult.equals(result);
     }
-
-
+    @Test
+    public void bigMinus13() {
+        String expectedResult = "9999999999999999";
+        String result = Level1.BigMinus("10000000000000000", "1");
+        assert expectedResult.equals(result);
+    }
 }
