@@ -2,10 +2,6 @@ import java.util.ArrayList;
 import java.util.stream.IntStream;
 
 public class Level1 {
-    public static void main(String[] args) {
-        System.out.println(BigMinus("10000000000000000", "1"));
-    }
-
     public static String BigMinus(String s1, String s2) {
         int n = Math.max(s1.length(), s2.length());
         int[] num1;
@@ -25,7 +21,6 @@ public class Level1 {
         String result = "";
         for (int i = n - 1; i >= 0; i--) {
             int diff = num1[i] - num2[i] - b;
-            System.out.println(diff);
             if (diff < 0) {
                 diff += 10;
                 b = 1;
