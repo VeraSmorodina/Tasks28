@@ -27,7 +27,7 @@ public class Level1 {
         double percent = ((double) resultInt * 100) / sum;
         double scale = Math.pow(10, 2);
         percent = Math.floor(percent * scale) / scale;
-        return percent >= 50 ? "majority winner " + arrayList.get(0) : "minority winner " + arrayList.get(0);
+        return percent > 50 ? "majority winner " + arrayList.get(0) : "minority winner " + arrayList.get(0);
     }
 
     public static List<Integer> y(Map<Integer, Integer> map1, int x) {
