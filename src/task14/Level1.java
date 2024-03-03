@@ -1,5 +1,3 @@
-package task14;
-
 public class Level1 {
     public static int Unmanned(int L, int N, int[][] track) {
         int resultPath = 0;
