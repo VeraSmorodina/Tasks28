@@ -1,5 +1,8 @@
 public class Level1 {
     public static int Unmanned(int L, int N, int[][] track) {
+        if (L < track[0][0]){
+            return L;
+        }
         int resultPath = 0;
         int x = 0;
         for (int i = 0; i <= L; i++) {
@@ -8,11 +11,11 @@ public class Level1 {
                 continue;
             }
             if (i == track[x][0] && x < N - 1) {
-                resultPath += trafficLights(resultPath, track[x]);
+                resultPath += trafficLights(resultPath, track[x]) + 1;
                 x++;
-                resultPath++;
                 continue;
             }
+            if (L < track[x][0] && i==L) return resultPath;
             resultPath++;
         }
         return resultPath;
