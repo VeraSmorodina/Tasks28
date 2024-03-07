@@ -7,17 +7,17 @@ public class Level1 {
         String[] strArray2 = S2.split(" ");
         boolean[] array = new boolean[strArray2.length];
         Arrays.fill(array, false);
-        int v = 0;
+        int index = 0;
         for (int i = 0; i < strArray2.length; i++) {
-            for (int j = v; j < strArray1.length; j++) {
+            for (int j = index; j < strArray1.length; j++) {
                 result = checkString(strArray1[j], strArray2[i]);
-                v++;
+                index++;
                 if (result) {
                     array[i] = result;
                     break;
                 }
             }
-            v--;
+            index--;
             if (result)
                 continue;
             array[i] = false;
@@ -35,8 +35,6 @@ public class Level1 {
         int endIndex = s1.indexOf(s2.charAt(s2.length() - 1), startIndex);
         if (startIndex != -1 && endIndex != -1)
             str = s1.substring(startIndex, endIndex + 1);
-        if (s2.equals(str))
-            return true;
-        return false;
+        return s2.equals(str);
     }
 }
