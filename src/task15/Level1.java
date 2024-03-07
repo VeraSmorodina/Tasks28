@@ -1,4 +1,4 @@
-import java.util.Arrays;
+    import java.util.Arrays;
 
 public class Level1 {
     public static boolean TankRush(int H1, int W1, String S1, int H2, int W2, String S2) {
@@ -17,9 +17,8 @@ public class Level1 {
                     break;
                 }
             }
-            if (result) {
+            if (result)
                 continue;
-            }
             b[i] = false;
         }
         for (boolean b1 : b) {
@@ -33,12 +32,10 @@ public class Level1 {
         String subStr = "";
         int startIndex = s1.indexOf(s2.charAt(0));
         int endIndex = s1.indexOf(s2.charAt(s2.length() - 1), startIndex);
-        if (startIndex != -1 && endIndex != -1) {
+        if (startIndex != -1 && endIndex != -1)
             subStr = s1.substring(startIndex, endIndex + 1);
-        }
-        if (s2.equals(subStr)) {
+        if (s2.equals(subStr))
             return true;
-        }
         return false;
     }
 }
