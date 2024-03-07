@@ -45,5 +45,10 @@ public class Level1Test {
         boolean result = Level1.TankRush(3, 3, "123 346 198", 2, 3, "123 198");
         assert assertedResult == result;
     }
-
+    @Test
+    public void tankRush7() {
+        boolean assertedResult = true;
+        boolean result = Level1.TankRush(4, 6, "029402 560202 029694 780288", 2, 2, "02 94");
+        assert assertedResult == result;
+    }
 }
