@@ -1,4 +1,4 @@
-    import java.util.Arrays;
+import java.util.Arrays;
 
 public class Level1 {
     public static boolean TankRush(int H1, int W1, String S1, int H2, int W2, String S2) {
