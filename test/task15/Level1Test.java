@@ -41,7 +41,7 @@ public class Level1Test {
 
     @Test
     public void tankRush6() {
-        boolean assertedResult = true;
+        boolean assertedResult = false;
         boolean result = Level1.TankRush(3, 3, "123 346 198", 2, 3, "123 198");
         assert assertedResult == result;
     }
@@ -49,6 +49,24 @@ public class Level1Test {
     public void tankRush7() {
         boolean assertedResult = true;
         boolean result = Level1.TankRush(4, 6, "029402 560202 029694 780288", 2, 2, "02 94");
+        assert assertedResult == result;
+    }
+    @Test
+    public void tankRush8() {
+        boolean assertedResult = true;
+        boolean result = Level1.TankRush(3, 3, "123 236 348", 3, 2, "23 34");
+        assert assertedResult == result;
+    }
+    @Test
+    public void tankRush9() {
+        boolean assertedResult = true;
+        boolean result = Level1.TankRush(3, 3, "123 234 348", 2, 2, "23 34");
+        assert assertedResult == result;
+    }
+    @Test
+    public void tankRush10() {
+        boolean assertedResult = true;
+        boolean result = Level1.TankRush(3, 3, "123 234 348", 3, 3, "123 234 348");
         assert assertedResult == result;
     }
 }

@@ -1,40 +1,40 @@
-import java.util.Arrays;
-
 public class Level1 {
     public static boolean TankRush(int H1, int W1, String S1, int H2, int W2, String S2) {
-        boolean result = false;
         String[] strArray1 = S1.split(" ");
         String[] strArray2 = S2.split(" ");
-        boolean[] array = new boolean[strArray2.length];
-        Arrays.fill(array, false);
+        int[][] coordinates = new int[strArray2.length][];
+        boolean[] containsValues = new boolean[strArray2.length];
         int index = 0;
+        boolean isNewCycle = false;
         for (int i = 0; i < strArray2.length; i++) {
             for (int j = index; j < strArray1.length; j++) {
-                result = checkString(strArray1[j], strArray2[i]);
-                index++;
-                if (result) {
-                    array[i] = result;
+                if (i != 0 && index != 0 && !strArray1[j].contains(strArray2[i])) {
+                    i = -1;
+                    index = j;
+                    containsValues = new boolean[strArray2.length];
+                    isNewCycle = true;
                     break;
                 }
+                isNewCycle = false;
+                if (!strArray1[j].contains(strArray2[i]))
+                    continue;
+                containsValues[i] = true;
+                coordinates[i] = new int[]{strArray1[j].indexOf(strArray2[i].charAt(0))};
+                index = j + 1;
+                break;
             }
-            index--;
-            if (result)
-                continue;
-            array[i] = false;
+            if (!isNewCycle && !containsValues[0])
+                return false;
         }
-        for (boolean b1 : array) {
-            if (!b1)
+        for (boolean value : containsValues) {
+            if (!value)
+                return false;
+        }
+        int first = coordinates[0][0];
+        for (int[] coordinate : coordinates) {
+            if (coordinate[0] != first)
                 return false;
         }
         return true;
-    }
-
-    public static boolean checkString(String s1, String s2) {
-        String str = "";
-        int startIndex = s1.indexOf(s2.charAt(0));
-        int endIndex = s1.indexOf(s2.charAt(s2.length() - 1), startIndex);
-        if (startIndex != -1 && endIndex != -1)
-            str = s1.substring(startIndex, endIndex + 1);
-        return s2.equals(str);
     }
 }
