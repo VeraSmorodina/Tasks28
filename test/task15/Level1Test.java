@@ -88,4 +88,11 @@ public class Level1Test {
                 2, 2, "99 99");
         assertEquals(assertedResult, result);
     }
+
+    @Test
+    public void tankRush13() {
+        boolean assertedResult = true;
+        boolean result = Level1.TankRush(4, 4, "3434 2234 3348", 2, 2, "34 48");
+        assertEquals(assertedResult, result);
+    }
 }
