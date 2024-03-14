@@ -1,3 +1,5 @@
+package task17;
+
 public class Level1 {
     public static boolean LineAnalysis(String line) {
         if ((line.charAt(0) != '*' || line.charAt(line.length() - 1) != '*') || line.charAt(0) != '*' && line.charAt(line.length() - 1) != '*')
