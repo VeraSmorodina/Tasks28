@@ -14,7 +14,7 @@ public class Level1Test {
 
     @Test
     public void misterRobot2() {
-        boolean assertedResult = false;
+        boolean assertedResult = true;
         boolean result = Level1.MisterRobot(5, new int[]{1, 3, 5, 4, 2});
         assert assertedResult == result;
     }
