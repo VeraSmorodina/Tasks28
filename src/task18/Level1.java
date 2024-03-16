@@ -1,9 +1,11 @@
+package task18;
+
 import java.util.Arrays;
 
 public class Level1 {
     public static boolean MisterRobot(int N, int[] data) {
         int[] array1 = Arrays.copyOf(data, data.length);
-        Arrays.sort(array1);
+        array1 = sort(array1);
         for (int i = 0; i < N - 2; i++) {
             if (data[i] == i + 1)
                 continue;
@@ -31,5 +33,18 @@ public class Level1 {
                 return i;
         }
         return -1;
+    }
+
+    public static int[] sort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+        return array;
     }
 }
