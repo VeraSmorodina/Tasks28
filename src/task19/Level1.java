@@ -4,18 +4,9 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 public class Level1 {
-    public static void main(String[] args) {
-        String[] words = new String[]{"платье1 5", "сумка32 2", "платье1 1", "сумка23 2", "сумка128 4"};
-        String[] s = ShopOLAP(5, words);
-        for (String string : s) {
-            System.out.println(string);
-        }
-
-    }
-
     public static String[] ShopOLAP(int N, String[] items) {
         HashMap<String, Integer> map = new HashMap<>();
-        String[] array = new String[2];
+        String[] array;
         for (int i = 0; i < items.length; i++) {
             array = items[i].split(" ");
             if (map.containsKey(array[0])) {
@@ -24,51 +15,39 @@ public class Level1 {
             }
             map.put(array[0], Integer.valueOf(array[1]));
         }
-
-//        for (String i : map.keySet()) {
-//            System.out.println("key: " + i + " value: " + map.get(i));
-//        }
-//        System.out.println();
-
-        ArrayList<Integer> arrayList = new ArrayList<>();
+        HashSet<Integer> hashList = new HashSet<>();
+        ArrayList<Integer> arrayList1 = new ArrayList<>();
         for (Integer i : map.values()) {
-            arrayList.add(i);
+            arrayList1.add(i);
+            hashList.add(i);
         }
+        ArrayList<Integer> arrayList = new ArrayList<>(hashList);
         Collections.sort(arrayList, Collections.reverseOrder());
+        Collections.sort(arrayList1, Collections.reverseOrder());
 
-        String[] result = new String[arrayList.size()];
-        List<String> strings = new ArrayList<>();
+        String[] result = new String[arrayList1.size()];
+        List<String> strings;
         List<String> strings1 = new ArrayList<>();
         ArrayList<String> sss = new ArrayList<>();
-
-
         for (int i = 0; i < arrayList.size(); i++) {
             for (String s : map.keySet()) {
                 if (arrayList.get(i) == map.get(s))
                     sss.add(s);
             }
             strings = word(sss);
-            sss.clear();
             for (String string : strings) {
                 strings1.add(string);
             }
             strings.clear();
+            sss.clear();
         }
-
-//        for (String s : strings1) {
-//            System.out.print(s + "  ");
-//        }
-//        System.out.println();
-
         for (int i = 0; i < result.length; i++) {
-            result[i] = strings1.get(i);
+            result[i] = strings1.get(i) + " " + arrayList1.get(i);
         }
         return result;
     }
 
-
     public static List<String> word(ArrayList<String> faang) {
-//        List<String> faang = Arrays.asList(s, s2);
         List<String> sorted_list = new ArrayList<>(new TreeSet<>(faang));
         return sorted_list;
     }
