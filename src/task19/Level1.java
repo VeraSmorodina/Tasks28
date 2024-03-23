@@ -1,3 +1,5 @@
+package task19;
+
 import java.util.*;
 
 public class Level1 {
