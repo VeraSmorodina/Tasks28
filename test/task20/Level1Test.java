@@ -149,6 +149,4 @@ public class Level1Test {
         String actual5 = Level1.BastShoe("1 **");
         assert actual5.equals(asserted5);
     }
-
-
 }
