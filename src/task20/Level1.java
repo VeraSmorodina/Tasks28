@@ -13,7 +13,9 @@ public class Level1 {
         switch (number) {
             case "1" -> add(argument);
             case "2" -> delete(argument);
-            case "3" -> getASymbol(argument);
+            case "3" -> {
+                return getASymbol(argument);
+            }
             case "4" -> Undo();
             case "5" -> Redo();
         }
@@ -43,10 +45,12 @@ public class Level1 {
         index = list.size() - 1;
     }
 
-    public static void getASymbol(String s) {
+    public static String getASymbol(String s) {
         int number = Integer.parseInt(s);
-        word = Character.toString(word.charAt(number));
-        index = list.size() - 1;
+        if (number > word.length()) {
+            return "";
+        }
+        return Character.toString(word.charAt(number));
     }
 
     public static void Undo() {
@@ -63,4 +67,3 @@ public class Level1 {
         }
     }
 }
-
