@@ -47,7 +47,7 @@ public class Level1 {
 
     public static String getASymbol(String s) {
         int number = Integer.parseInt(s);
-        if (number >= word.length()) {
+        if (number >= word.length() || number < 0) {
             return "";
         }
         return Character.toString(word.charAt(number));
