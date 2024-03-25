@@ -1,3 +1,5 @@
+package task20;
+
 import java.util.ArrayList;
 
 public class Level1 {
