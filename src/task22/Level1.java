@@ -1,5 +1,3 @@
-package task22;
-
 import java.util.HashMap;
 
 public class Level1 {
