@@ -19,13 +19,10 @@ public class Level1 {
             }
             map1.put(i, map1.get(i) + 1);
         }
-        Integer max = -1;
         Integer k = -1;
         for (Integer i : map1.keySet()) {
-            if (map1.get(i) > max) {
-                max = i;
+            if (map1.get(i) > k)
                 k = i;
-            }
         }
         boolean b = true;
         boolean b1 = true;
@@ -36,9 +33,8 @@ public class Level1 {
                 b = false;
                 continue;
             }
-            if (map.get(i) != k) {
+            if (map.get(i) != k)
                 b1 = false;
-            }
         }
         return b && b1 || !b && b1;
     }
