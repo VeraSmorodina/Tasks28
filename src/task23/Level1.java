@@ -1,3 +1,5 @@
+package task23;
+
 public class Level1 {
     public static String[] TreeOfLife(int H, int W, int N, String[] tree) {
         int[][] array = new int[H][W];
