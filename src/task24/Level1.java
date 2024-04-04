@@ -211,7 +211,7 @@ public class Level1 {
 
                     }
 //                    if (w == strings1[v].length - 1 - i) {
-                    if ( w == strings1[v].length - 1 - i) {
+                    if ( w == strings1[v].length - 1) {
 //                        strings1[strings1.length - 1 - i - v][w + i] = array[array.length - ind];
 //                        System.out.println(v - i);
 //                        System.out.println(w - i);
@@ -231,7 +231,8 @@ public class Level1 {
                         System.out.println();
                     }
                     if (v == strings1.length - 1 - i  && w < strings1[i].length - 1 - i){
-                        strings1[v + i][w + 1 + i] = array[in];
+//                        strings1[v + i][w + 1 + i] = array[in];
+                        strings1[v][w + 1] = array[in];
                         in++;
 
                         System.out.println(" чет");
