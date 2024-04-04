@@ -187,15 +187,11 @@ public class Level1 {
                             System.out.println();
                         }
                         System.out.println();
-
-
-
                     }
-//                    if (v == i && w < strings1[i].length - 2 - i) {
+
+
+
                     if (v == i && w < strings1[i].length - 2) {
-//                    if (v == i && w != strings1[i].length - 1 - i || w != i) {
-//                        strings1[v + i][strings1[v].length - 1 - i - w - 1] = array[array.length - ind];
-//                        strings1[v + i][w + i + 1] = array[array.length - ind];
                         strings1[v ][w +  1] = array[array.length - ind];
                         System.out.println("второй " + strings1[v ][strings1[v].length - 1 - i - w - 1]);
                         ind++;
@@ -210,17 +206,11 @@ public class Level1 {
                         System.out.println();
 
                     }
-//                    if (w == strings1[v].length - 1 - i) {
+
+
                     if ( w == strings1[v].length - 1) {
-//                        strings1[strings1.length - 1 - i - v][w + i] = array[array.length - ind];
-//                        System.out.println(v - i);
-//                        System.out.println(w - i);
-//                        System.out.println( array.length - ind);
-//                        ind--;
                         strings1[v + i][w + i] = array[array.length - ind];
                         System.out.println("Трет " + strings1[v - i][w - i]);
-//                        ind++;
-
                         System.out.println();
                         for (int j = 0; j < strings1.length; j++) {
                             for (int k = 0; k < strings1[j].length; k++){
@@ -230,8 +220,9 @@ public class Level1 {
                         }
                         System.out.println();
                     }
+
+
                     if (v == strings1.length - 1 - i  && w < strings1[i].length - 1 - i){
-//                        strings1[v + i][w + 1 + i] = array[in];
                         strings1[v][w + 1] = array[in];
                         in++;
 
@@ -248,21 +239,6 @@ public class Level1 {
             }
         }
 
-//        String[] d = new String[N];
-//        String[][] z = new String[M][N];
-//        String o = "";
-//        for (int i = 0; i < M; i++) {
-//            d = list.get(i);
-//            for (int j = 0; j < N; j++) {
-//
-//                if(i == 0){
-//                    o += d[i] ;
-//                }
-//            }
-//
-//        }
-
-
         for (String[] strings2 : strings1) {
             for (String s : strings2) {
                 System.out.print(s);
@@ -270,36 +246,6 @@ public class Level1 {
             System.out.println();
         }
         System.out.println();
-//        for (int i = 0; i < list.size(); i++) {
-//            for (int j = 0; j < list.get(i).length; j++) {
-//                for (int v = 0 + i; v < strings1.length - i; v++) {
-//                    for (int w = 0 + i; w < strings1[i].length - i; w++) {
-//                        if (j < M){
-//                            strings1[i][0 + i] = list.get(i).;
-//                        }
-//
-//
-//
-//                    }
-//                }
-//            }
-//        }
-
-//        for (String[] strings2 : list) {
-//            for (String s : strings2) {
-//                for (int v = 0 + i; v < strings1.length - i; v++) {
-//                    for (int w = 0 + i; w < strings1[i].length - i; w++) {
-//                        if (j < M){
-//                            strings1[0 + i] =
-//                        }
-//
-//
-//
-//                    }
-//                }
-//            }
-//        }
-
 
         return list;
     }
