@@ -162,33 +162,105 @@ public class Level1 {
         }
         System.out.println();
 
-        int in = 0;
 
-
-
+//        int ind = 1;
+        int MM = M;
+        int NN = N;
         for (int i = 0; i < M / 2; i++) {
             String[] array = list.get(i);
+            int in = 0;
+            int ind = 0;
             for (int v = i; v < strings1.length - i; v++) {
                 for (int w = i; w < strings1[v].length - i; w++) {
                     if (w == i) {
-                        strings1[v + i][w + i] = array[in];
-                        in++;
-                    }
-                    if (v == i && w != strings1[i].length - 1 - i) {
-                        strings1[v + i][strings1[v].length - 1 - i - w - 1] = array[in];
-                        in++;
-                    }
-                    if (w == strings1[v].length - 1 - i) {
-                        strings1[strings1.length - 1 - i - v][w + i] = array[in];
-                        in++;
-                    }
-                    if (v == strings1.length - 1 - i  && w != strings1[i].length - 1 - i){
+//                        strings1[v + i][w + i] = array[in];
                         strings1[v][w] = array[in];
+                        System.out.println( "первый " + strings1[v][w]);
                         in++;
+                        ind++;
+
+                        System.out.println();
+                        for (int j = 0; j < strings1.length; j++) {
+                            for (int k = 0; k < strings1[j].length; k++){
+                                System.out.print(strings1[j][k]);
+                            }
+                            System.out.println();
+                        }
+                        System.out.println();
+
+
+
+                    }
+//                    if (v == i && w < strings1[i].length - 2 - i) {
+                    if (v == i && w < strings1[i].length - 2) {
+//                    if (v == i && w != strings1[i].length - 1 - i || w != i) {
+//                        strings1[v + i][strings1[v].length - 1 - i - w - 1] = array[array.length - ind];
+//                        strings1[v + i][w + i + 1] = array[array.length - ind];
+                        strings1[v ][w +  1] = array[array.length - ind];
+                        System.out.println("второй " + strings1[v ][strings1[v].length - 1 - i - w - 1]);
+                        ind++;
+
+                        System.out.println();
+                        for (int j = 0; j < strings1.length; j++) {
+                            for (int k = 0; k < strings1[j].length; k++){
+                                System.out.print(strings1[j][k]);
+                            }
+                            System.out.println();
+                        }
+                        System.out.println();
+
+                    }
+//                    if (w == strings1[v].length - 1 - i) {
+                    if ( w == strings1[v].length - 1 - i) {
+//                        strings1[strings1.length - 1 - i - v][w + i] = array[array.length - ind];
+//                        System.out.println(v - i);
+//                        System.out.println(w - i);
+//                        System.out.println( array.length - ind);
+//                        ind--;
+                        strings1[v + i][w + i] = array[array.length - ind];
+                        System.out.println("Трет " + strings1[v - i][w - i]);
+//                        ind++;
+
+                        System.out.println();
+                        for (int j = 0; j < strings1.length; j++) {
+                            for (int k = 0; k < strings1[j].length; k++){
+                                System.out.print(strings1[j][k]);
+                            }
+                            System.out.println();
+                        }
+                        System.out.println();
+                    }
+                    if (v == strings1.length - 1 - i  && w < strings1[i].length - 1 - i){
+                        strings1[v + i][w + 1 + i] = array[in];
+                        in++;
+
+                        System.out.println(" чет");
+                        for (int j = 0; j < strings1.length; j++) {
+                            for (int k = 0; k < strings1[j].length; k++){
+                                System.out.print(strings1[j][k]);
+                            }
+                            System.out.println();
+                        }
+                        System.out.println();
                     }
                 }
             }
         }
+
+//        String[] d = new String[N];
+//        String[][] z = new String[M][N];
+//        String o = "";
+//        for (int i = 0; i < M; i++) {
+//            d = list.get(i);
+//            for (int j = 0; j < N; j++) {
+//
+//                if(i == 0){
+//                    o += d[i] ;
+//                }
+//            }
+//
+//        }
+
 
         for (String[] strings2 : strings1) {
             for (String s : strings2) {
