@@ -4,19 +4,20 @@ package task24;
 import java.util.ArrayList;
 
 public class Level1 {
-    //    public static String[][] strings;
+
     public static void main(String[] args) {
-        String[] s = new String[]{"123456", "234567", "345678", "456789"};
-        ArrayList<String[]> arrayList = MatrixTurn(s, 4, 6, 1);
-        for (String[] strings : arrayList) {
-            for (String string : strings) {
-                System.out.print(string);
-            }
-            System.out.println();
+//        String[] Matrix = new String[]{"123456", "234567", "345678", "456789"};
+//        MatrixTurn(Matrix, 4, 6, 1);
+        String[] Matrix = new String[]{"12", "34"};
+        MatrixTurn(Matrix, 2, 2, 1);
+
+        System.out.println("++++++");
+        for (int i = 0; i < Matrix.length; i++) {
+            System.out.println(Matrix[i]);
         }
     }
 
-    public static ArrayList<String[]> MatrixTurn(String[] Matrix, int M, int N, int T) {
+    public static void MatrixTurn(String[] Matrix, int M, int N, int T) {
 
         String[][] strings = new String[M][N];
         for (int i = 0; i < Matrix.length; i++) {
@@ -25,11 +26,6 @@ public class Level1 {
             }
         }
         String[][] strings1 = new String[M][N];
-//        for (int i = 0; i < strings.length; i++) {
-//            for (int j = 0; j < strings[i].length; j++) {
-//                strings1[i][j] = strings[i][j];
-//            }
-//        }
 //        выводим в консоль
         for (int i = 0; i < strings.length; i++) {
             for (int j = 0; j < strings[i].length; j++) {
@@ -46,16 +42,15 @@ public class Level1 {
         int y = 0;
         int x = M / 2;
         String[] res = new String[(M + N - 2) * 2];
-//        ArrayList<String> res = new ArrayList<>();
         ArrayList<String[]> list = new ArrayList<>();
         while (x > 0) {
             int index = 0;
             int index1 = 0;
             int index2 = 0;
             int index3 = 0;
-            for (int i = 0 + y; i < strings.length - y; i++) {
-                for (int j = 0 + y; j < strings[i].length - y; j++) {
-                    if (j == 0 + y) {
+            for (int i = y; i < strings.length - y; i++) {
+                for (int j = y; j < strings[i].length - y; j++) {
+                    if (j == y) {
                         left[index2] = strings[i][j];
                         index2++;
                     }
@@ -63,11 +58,11 @@ public class Level1 {
                         right[index3] = strings[i][j];
                         index3++;
                     }
-                    if (i == 0 + y && j != 0 + y && j != N - 1 - y) {
+                    if (i == y && j != y && j != N - 1 - y) {
                         top[index] = strings[i][j];
                         index++;
                     }
-                    if (i == strings.length - 1 - y && j != 0 + y && j != N - 1 - y) {
+                    if (i == strings.length - 1 - y && j != y && j != N - 1 - y) {
                         bottom[index1] = strings[i][j];
                         index1++;
                     }
@@ -112,14 +107,9 @@ public class Level1 {
 
 
             list.add(res);
-////            нужно очистить res?
-//            for (String re : res) {
-//                re = null;
-//            }
 
-
-//            res = new String[((M - 2) + (N  - 2) - 2) * 2 ];
-//            res = new String[((M - number) + (N  - number) - 2) * 2 ];
+            if (M / 2 <= 1)
+                break;
             res = new String[((M - number) + (N - number) - 2) * 2];
             left = new String[M - number];
             right = new String[M - number];
@@ -127,22 +117,14 @@ public class Level1 {
             top = new String[strings[0].length - number];
             bottom = new String[strings[0].length - number];
         }
-//        int turn = 0;
-//        if (T > (M + N - 2) * 2){
-//            turn = T - ((M + N - 2) * 2);
-//        }
 
-//        int turn = (M + N - 2) * 2;
-//        while ( T > turn) {
-//            turn = T - turn;
-//        }
         int t = (M + N - 2) * 2;
         while (T > t) {
             T = T - t;
         }
         System.out.println(T);
         if (T == t)
-            return list;
+            return;
         if (T < (M + N - 2) * 2) {
             for (String[] strings2 : list) {
                 for (int i = 0; i < T; i++) {
@@ -175,13 +157,13 @@ public class Level1 {
                     if (w == i) {
 //                        strings1[v + i][w + i] = array[in];
                         strings1[v][w] = array[in];
-                        System.out.println( "первый " + strings1[v][w]);
+                        System.out.println("первый " + strings1[v][w]);
                         in++;
                         ind++;
 
                         System.out.println();
                         for (int j = 0; j < strings1.length; j++) {
-                            for (int k = 0; k < strings1[j].length; k++){
+                            for (int k = 0; k < strings1[j].length; k++) {
                                 System.out.print(strings1[j][k]);
                             }
                             System.out.println();
@@ -190,15 +172,14 @@ public class Level1 {
                     }
 
 
-
                     if (v == i && w < strings1[i].length - 2) {
-                        strings1[v ][w +  1] = array[array.length - ind];
-                        System.out.println("второй " + strings1[v ][strings1[v].length - 1 - i - w - 1]);
+                        strings1[v][w + 1] = array[array.length - ind];
+                        System.out.println("второй " + strings1[v][strings1[v].length - 1 - i - w - 1]);
                         ind++;
 
                         System.out.println();
                         for (int j = 0; j < strings1.length; j++) {
-                            for (int k = 0; k < strings1[j].length; k++){
+                            for (int k = 0; k < strings1[j].length; k++) {
                                 System.out.print(strings1[j][k]);
                             }
                             System.out.println();
@@ -208,12 +189,12 @@ public class Level1 {
                     }
 
 
-                    if ( w == strings1[v].length - 1) {
+                    if (w == strings1[v].length - 1) {
                         strings1[v + i][w + i] = array[array.length - ind];
                         System.out.println("Трет " + strings1[v - i][w - i]);
                         System.out.println();
                         for (int j = 0; j < strings1.length; j++) {
-                            for (int k = 0; k < strings1[j].length; k++){
+                            for (int k = 0; k < strings1[j].length; k++) {
                                 System.out.print(strings1[j][k]);
                             }
                             System.out.println();
@@ -222,13 +203,13 @@ public class Level1 {
                     }
 
 
-                    if (v == strings1.length - 1 - i  && w < strings1[i].length - 1 - i){
+                    if (v == strings1.length - 1 - i && w < strings1[i].length - 1 - i) {
                         strings1[v][w + 1] = array[in];
                         in++;
 
                         System.out.println(" чет");
                         for (int j = 0; j < strings1.length; j++) {
-                            for (int k = 0; k < strings1[j].length; k++){
+                            for (int k = 0; k < strings1[j].length; k++) {
                                 System.out.print(strings1[j][k]);
                             }
                             System.out.println();
@@ -247,6 +228,13 @@ public class Level1 {
         }
         System.out.println();
 
-        return list;
+
+        for (int i = 0; i < strings1.length; i++) {
+            String u = "";
+            for (int j = 0; j < strings1[i].length; j++) {
+                u += strings1[i][j];
+            }
+            Matrix[i] = u;
+        }
     }
 }
