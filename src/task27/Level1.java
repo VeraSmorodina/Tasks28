@@ -5,6 +5,8 @@ public class Level1 {
     public static boolean Football(int[] F, int N) {
         int[] expectedArray = Arrays.copyOf(F, F.length);
         Arrays.sort(expectedArray);
+        if (Arrays.equals(expectedArray, F))
+            return false;
         return arrangingSomeElements(F, expectedArray)
                 || swappingElements(F, expectedArray)
                 || arrangingAllElements(F, expectedArray);

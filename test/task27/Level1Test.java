@@ -37,5 +37,11 @@ public class Level1Test {
         boolean expected = false;
         assert result == expected;
     }
+    @Test
+    public void football6() {
+        boolean result = Level1.Football(new int[]{1,2,3}, 3);
+        boolean expected = false;
+        assert result == expected;
+    }
 
 }
