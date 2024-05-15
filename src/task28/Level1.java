@@ -1,3 +1,5 @@
+package task28;
+
 import java.util.Arrays;
 
 public class Level1 {
